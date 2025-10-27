@@ -60,7 +60,7 @@ class _ReceiptExtractorState extends State<ReceiptExtractor> {
     final request = http.MultipartRequest('POST', uri)
       ..headers['Authorization'] = 'Bearer df6c60e7-aef2-11f0-a5c1-5ac389dc736a'
       ..fields['output_type'] = 'specified-json'
-      ..fields['json_schema'] = ' {"invoice_number": "string", "date": "string", "store_name": "string", "items": [ { "description": "string", "quantity": "number", "price": "number" } ], "tax": "number", "total_amount": "number"} '
+      ..fields['json_schema'] = ' {"invoice_number": "string", "date": "string", "store_name": "string", "items": [ { "name": "string", "price": "number" } ], "tax": "number", "total_amount": "number"} '
       ..files.add(await http.MultipartFile.fromPath('file', file.path));
 
     try {
